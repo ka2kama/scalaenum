@@ -58,6 +58,6 @@ object ScalaEnumEntryBase {
     /** @param ev 自身がメンバーとして所属している列挙を表すobject
       * @return 列挙定数の序数
       */
-    def ordinal(implicit ev: ScalaEnumBase[A]): Int = ev.indexOf(self)
+    def ordinal[E <: ScalaEnumBase[A]](implicit ev: E): Int = ev.indexOf(self)
   }
 }
